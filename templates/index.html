@@ -9,9 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/magical-text.css' )}}">
 </head>
 
 <style>
+    html {
+        color-scheme: dark;
+    }
+
     body {
         padding-right: 30px;
         padding-left: 30px;
@@ -19,6 +24,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+
+    }
+
+    h1 {
+        text-align: center;
     }
 
     p,
@@ -26,12 +37,38 @@
     small,
     h2 {
         font-family: "Vazirmatn", sans-serif;
+        text-align: center;
     }
 </style>
 
 <body dir="rtl">
-    <h1>عکس های دومین المپیک علامه حلی 3 دوره دوم</h1>
-    <p>عکس ها به صورت ناشناس گروه بندی شده اند، داورین عزیز نمرات خود را برای مسئولین مربوطه به این صورت ارسال کنند:</p>
+
+    <h1 class="mxes-title">
+        عکس های دومین
+        <span class="magic">
+            <span class="magic-star">
+                <svg viewBox="0 0 512 512">
+                    <path
+                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                </svg>
+            </span>
+            <span class="magic-star">
+                <svg viewBox="0 0 512 512">
+                    <path
+                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                </svg>
+            </span>
+            <span class="magic-star">
+                <svg viewBox="0 0 512 512">
+                    <path
+                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+                </svg>
+            </span>
+            <span class="magic-text"> المپیک </span>
+        </span> علامه حلی 3 دوره دوم
+    </h1>
+    <p>عکس ها به صورت ناشناس گروه بندی شده اند، داورین عزیز نمرات خود را برای مسئولین مربوطه به این صورت ارسال کنند:
+    </p>
     <p>گروه 0 - امتیاز<br>
         گروه 1 - امتیاز<br>
         ...
@@ -42,7 +79,7 @@
 
     {% for groupIndex in data %}
     <h2>گروه {{groupIndex}}</h2>
-    <div>
+    <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px; flex-wrap: wrap;">
         {% for image in data[groupIndex]["images"] %}
         <a href="{{image}}"><img src="{{image}}" style="border-radius: 10px; object-fit: cover;" alt="" width="200px"
                 height="200px"></a>
@@ -52,7 +89,13 @@
 
     <br>
     <br>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 10px;">
+        <img src="{{url_for('static', filename='assets/logo/unnamed.gif' )}}" alt="" height="50px">
+        <img src="{{url_for('static', filename='assets/logo/ii.png' )}}" alt="" height="50px">
+    </div>
     <small>© II Labs 2023-2024</small>
 </body>
+
+<script src="{{url_for('static', filename='js/magical-text.js' )}}"></script>
 
 </html>
