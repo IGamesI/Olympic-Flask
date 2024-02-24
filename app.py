@@ -18,13 +18,13 @@ import base64
 from PIL import Image
 import io
 
-# pythonanywherePath = "/home/JozveSara/mysite/"
+pythonanywherePath = "/home/helli3olympic/mysite/"
 # pythonanywherePath = "d:/temp/JozveSara-Backend/"
-pythonanywherePath = "./"
+# pythonanywherePath = "./"
 
 app = Flask(__name__)
 CORS(app, expose_headers=["Content-Disposition"])
-apiKey = "1673473828907940936"
+apiKey = "167qw3er13rdfwdxcaaeqwf23frq3ewfrt34gt243edqwjy5634!@#$@$TFGEDS!#@R738289qw23r234rf07940936"
 
 
 def hash_password(password):
@@ -54,6 +54,9 @@ def page_main():
 def signin():
     username = request.json["user"]
     password = request.json["password"]
+    api_key = request.json["api_key"]
+    if api_key != apiKey:
+        return "Invalid API Key", 401
 
     userData = json.loads(open(f"{pythonanywherePath}userData.json").read())
     for userId in userData:
@@ -69,6 +72,9 @@ def signin():
 @app.route("/upload_image", methods=["POST"])
 def upload_image():
     userid = request.form.get("user_id")
+    api_key = request.form.get("api_key")
+    if api_key != apiKey:
+        return "Invalid API Key", 401
     imageData = json.loads(open(f"{pythonanywherePath}data.json").read())
     userData = json.loads(open(f"{pythonanywherePath}userData.json").read())
 
