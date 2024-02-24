@@ -5,11 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عکس های دومین المپیک</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<style>
+    body {
+        padding-right: 30px;
+        padding-left: 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p,
+    h1,
+    small,
+    h2 {
+        font-family: "Vazirmatn", sans-serif;
+    }
+</style>
+
+<body dir="rtl">
+    <h1>عکس های دومین المپیک علامه حلی 3 دوره دوم</h1>
+    <p>عکس ها به صورت ناشناس گروه بندی شده اند، داورین عزیز نمرات خود را برای مسئولین مربوطه به این صورت ارسال کنند:</p>
+    <p>گروه 0 - امتیاز<br>
+        گروه 1 - امتیاز<br>
+        ...
+    </p>
+
+    <h2>آپلود عکس</h2>
+    <p>برای آپلود عکس به بات المپیک پیام دهید</p>
+
     {% for groupIndex in data %}
-    <p>Group {{groupIndex}}</p>
+    <h2>گروه {{groupIndex}}</h2>
     <div>
         {% for image in data[groupIndex]["images"] %}
         <a href="{{image}}"><img src="{{image}}" style="border-radius: 10px; object-fit: cover;" alt="" width="200px"
@@ -17,6 +49,10 @@
         {% endfor %}
     </div>
     {% endfor %}
+
+    <br>
+    <br>
+    <small>© II Labs 2023-2024</small>
 </body>
 
 </html>
