@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عکس های دومین المپیک</title>
+</head>
+
+<body>
+    {% for groupIndex in data %}
+    <p>Group {{groupIndex}}</p>
+    <div>
+        {% for image in data[groupIndex]["images"] %}
+        <a href="{{image}}"><img src="{{image}}" style="border-radius: 10px; object-fit: cover;" alt="" width="200px"
+                height="200px"></a>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+
+</html>

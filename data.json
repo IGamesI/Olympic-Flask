@@ -1,0 +1,15 @@
+{
+  "0": {
+    "id": "123124412234",
+    "images": [
+      "/static/assets/dawn-armfield-28v9cq7ytNU-unsplash-scaled.jpg"
+    ]
+  },
+  "1": {
+    "id": "1234",
+    "images": [
+      "./static/assets/877324096.png",
+      "./static/assets/539762564.png"
+    ]
+  }
+}
