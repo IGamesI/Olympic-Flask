@@ -18,9 +18,9 @@ import base64
 from PIL import Image
 import io
 
-pythonanywherePath = "/home/helli3olympic/mysite/"
+# pythonanywherePath = "/home/helli3olympic/mysite/"
 # pythonanywherePath = "d:/temp/JozveSara-Backend/"
-# pythonanywherePath = "./"
+pythonanywherePath = "./"
 
 app = Flask(__name__)
 CORS(app, expose_headers=["Content-Disposition"])
@@ -95,10 +95,14 @@ def upload_image():
     print("--------------------------------")
     print(imageData)
 
-    image_file = request.files["picture"]
-    image_data = image_file.read()
-    image_base64 = base64.b64encode(image_data).decode("utf-8")
+    image_string = request.form["picture"]
+    image_data = base64.b64decode(image_string)
     image = Image.open(io.BytesIO(image_data))
+
+    # image_file = request.files["picture"]
+    # image_data = image_file.read()
+    # image_base64 = base64.b64encode(image_data).decode("utf-8")
+    # image = Image.open(io.BytesIO(image_data))
 
     image_name = random.randint(0, 999999999)
     file_path = f"{pythonanywherePath}static/assets/{image_name}.png"

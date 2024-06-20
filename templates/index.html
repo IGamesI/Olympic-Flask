@@ -39,11 +39,15 @@
         font-family: "Vazirmatn", sans-serif;
         text-align: center;
     }
+
+    p {
+        color: #cccccc
+    }
 </style>
 
 <body dir="rtl">
 
-    <h1 class="mxes-title">
+    <h1 class="mxes-title" style="margin-bottom: 0px;">
         عکس های دومین
         <span class="magic">
             <span class="magic-star">
@@ -67,15 +71,16 @@
             <span class="magic-text"> المپیک </span>
         </span> علامه حلی 3 دوره دوم
     </h1>
-    <p>عکس ها به صورت ناشناس گروه بندی شده اند، داورین عزیز نمرات خود را برای مسئولین مربوطه به این صورت ارسال کنند:
-    </p>
-    <p>گروه 0 - امتیاز<br>
+    <p style="margin-bottom: 0px;">عکس ها به صورت ناشناس گروه بندی شده اند، داورین عزیز نمرات خود را برای مسئولین مربوطه
+        به این صورت ارسال کنند:<br>
+        گروه 0 - امتیاز<br>
         گروه 1 - امتیاز<br>
         ...
     </p>
+    <p>برای بزرگ کردن عکس روی آن کلیک کنید</p>
 
-    <h2>آپلود عکس</h2>
-    <p>برای آپلود عکس به بات المپیک پیام دهید</p>
+    <h2 style="margin-bottom: 0px;">آپلود عکس</h2>
+    <p>برای آپلود عکس به بات المپیک @olympicphotouploadhelli3_bot در تلگرام پیام دهید</p>
 
     {% for groupIndex in data %}
     <h2>گروه {{groupIndex}}</h2>
